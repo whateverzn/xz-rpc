@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>example-provider</artifactId>
+    <artifactId>xz-rpc-core</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,15 +19,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.zn</groupId>
-            <artifactId>example-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>4.5.1</version>
         </dependency>
-
         <dependency>
-            <groupId>com.zn</groupId>
-            <artifactId>xz-rpc-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.18</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -36,9 +35,33 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.18</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- 序列化 -->
+        <!-- https://mvnrepository.com/artifact/com.caucho/hessian -->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.66</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.esotericsoftware/kryo -->
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.3</version>
         </dependency>
     </dependencies>
 

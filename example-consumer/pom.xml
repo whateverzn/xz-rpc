@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>com.zn</groupId>
-            <artifactId>xz-rpc-easy</artifactId>
+            <artifactId>xz-rpc-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

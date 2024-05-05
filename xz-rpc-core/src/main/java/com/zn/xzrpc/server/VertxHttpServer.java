@@ -2,10 +2,12 @@ package com.zn.xzrpc.server;
 
 import com.zn.xzrpc.model.HttpServerHandler;
 import io.vertx.core.Vertx;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Vertx服务器
  */
+@Slf4j
 public class VertxHttpServer implements HttpServer {
 
     @Override

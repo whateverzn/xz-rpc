@@ -35,7 +35,7 @@ public class RpcApplication {
      */
     public static void init(RpcConfig config) {
         rpcConfig = config;
-        log.info("rpc init:, config = {}", config);
+        log.info("rpc init: config = {}", config);
     }
 
     public static RpcConfig getRpcConfig() {

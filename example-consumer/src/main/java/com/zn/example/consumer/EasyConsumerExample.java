@@ -26,8 +26,7 @@ public class EasyConsumerExample {
         } else {
             System.out.println("No user...");
         }
-        int number = userService.getNumber();
-        System.out.println(number);
+
     }
 
 }

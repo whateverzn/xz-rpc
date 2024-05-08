@@ -1,16 +1,16 @@
 package com.zn.xzrpc.model;
 
 import com.zn.xzrpc.RpcApplication;
-import com.zn.xzrpc.register.LocalRegister;
-import com.zn.xzrpc.serializer.JdkSerializer;
+import com.zn.xzrpc.config.RegistryConfig;
+import com.zn.xzrpc.register.LocalRegistry;
+import com.zn.xzrpc.register.Registry;
+import com.zn.xzrpc.register.RegistryFactory;
 import com.zn.xzrpc.serializer.Serializer;
 import com.zn.xzrpc.serializer.SerializerFactory;
-import com.zn.xzrpc.spi.RpcSpiLoader;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.HttpServerResponse;
-import jdk.nashorn.internal.ir.CallNode;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -44,8 +44,11 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
                 return;
             }
             try {
-                //获取注册服务类
-                Class<?> implService = LocalRegister.getService(rpcRequest.getServiceName());
+                //获取注册服务类（从注册中心中获取）
+                Class<?> implService = LocalRegistry.getService(rpcRequest.getServiceName());
+//                RegistryConfig registryConfig = RpcApplication.getRpcConfig().getRegistryConfig();
+//                Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+
                 //反射执行方法
                 Method method = implService.getMethod(rpcRequest.getMethodName(),
                         rpcRequest.getParameterTypes());

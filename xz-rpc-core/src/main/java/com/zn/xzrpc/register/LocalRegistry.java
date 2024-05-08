@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 本地注册中心
  */
-public class LocalRegister {
+public class LocalRegistry {
 
     /**
      * 注册中心存储

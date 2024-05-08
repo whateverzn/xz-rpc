@@ -1,10 +1,12 @@
 package com.zn.xzrpc.model;
 
 import cn.hutool.core.util.StrUtil;
+import lombok.Data;
 
 /**
  * 服务元信息（注册信息）
  */
+@Data
 public class ServiceMetaInfo {
 
 
@@ -21,7 +23,7 @@ public class ServiceMetaInfo {
     /**
      * 服务端口
      */
-    private String servicePort;
+    private Integer servicePort;
 
     /**
      * 服务版本号
@@ -55,7 +57,7 @@ public class ServiceMetaInfo {
      * @return
      */
     public String getServiceNodeKey() {
-        return String.format("%s/%s", getServiceKey(), serviceAddress);
+        return String.format("%s/%s", getServiceKey(), getServiceAddress());
     }
 
     /**
@@ -64,9 +66,9 @@ public class ServiceMetaInfo {
      * @return
      */
     public String getServiceAddress() {
-        if (!StrUtil.contains(serviceHost, "http")) {
-            return String.format("http://%s:%s", serviceHost, servicePort);
-        }
+//        if (!StrUtil.contains(serviceHost, "http")) {
+//            return String.format("http://%s:%s", serviceHost, servicePort);
+//        }
         return String.format("%s:%s", serviceHost, servicePort);
     }
 

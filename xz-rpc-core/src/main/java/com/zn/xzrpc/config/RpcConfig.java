@@ -1,6 +1,7 @@
 package com.zn.xzrpc.config;
 
 import com.zn.xzrpc.constant.SerializerKeys;
+import com.zn.xzrpc.register.Registry;
 import lombok.Data;
 
 /**
@@ -37,5 +38,10 @@ public class RpcConfig {
      * 序列化器
      */
     private String serializer = SerializerKeys.JDK;
+
+    /**
+     * 注册中心配置
+     */
+    private RegistryConfig registryConfig;
 
 }

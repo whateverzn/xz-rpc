@@ -1,5 +1,6 @@
 package com.zn.xzrpc.model;
 
+import com.zn.xzrpc.constant.RpcConstant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,5 +36,11 @@ public class RpcRequest implements Serializable {
      * 参数列表
      */
     private Object[] parameters;
+
+    /**
+     * 服务版本
+     */
+    private String serviceVersion = RpcConstant.DEFAULT_SERVICE_VERSION;
+
 
 }

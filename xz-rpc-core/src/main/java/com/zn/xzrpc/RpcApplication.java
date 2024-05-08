@@ -1,7 +1,10 @@
 package com.zn.xzrpc;
 
+import com.zn.xzrpc.config.RegistryConfig;
 import com.zn.xzrpc.config.RpcConfig;
 import com.zn.xzrpc.constant.RpcConstant;
+import com.zn.xzrpc.register.Registry;
+import com.zn.xzrpc.register.RegistryFactory;
 import com.zn.xzrpc.uitls.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,6 +39,12 @@ public class RpcApplication {
     public static void init(RpcConfig config) {
         rpcConfig = config;
         log.info("rpc init: config = {}", config);
+
+        // 注册中心初始化
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry init, config = {}", registryConfig);
     }
 
     public static RpcConfig getRpcConfig() {
